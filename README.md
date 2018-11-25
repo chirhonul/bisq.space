@@ -32,7 +32,7 @@ and set it up at a new domain, following [this guide](https://rocket.chat/docs/i
 - create data directories:
   - `sudo mkdir -p /var/www/rocket.chat/data/dump`
   - `sudo mkdir -p /var/www/rocket.chat/data/runtime/db`
-- edit the [`docker-compose.yml`](docker-compose.yml) to specify hubot password and domain name
+- edit the [`docker-compose.yml`](conf/docker-compose.yml) to specify hubot password and domain name
 - place the edited `docker-compose.yml` file in `/var/www/rocket.chat/`
 - enable and start the systemd services [`rocket-db.service`](conf/rocket-db.service), [`rocket-chat.service`](conf/rocket-chat.service) and [`rocket-hubot.service`](conf/rocket-hubot.service)
   - copy the `.service` files to `/lib/systemd/system/` directory and do `sudo systemctl daemon-reload`
