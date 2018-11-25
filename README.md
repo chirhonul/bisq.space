@@ -2,8 +2,6 @@
 
 This repo holds tools and information about the bisq.space service.
 
-# intro
-
 The `bisq.space` service runs a [rocket.chat](https://rocket.chat) instance.
 
 # operational
@@ -87,3 +85,10 @@ We want to have metrics and timeseries on:
 - log exporting / aggregation
 - system metrics: disk, cpu, memory, load
 - (maybe) number of users, channels, messages
+
+## known issues
+
+### registration is slow
+
+When registering as a new user, there's a "loading" screen after sign-up that takes
+a very long time or never completes. When the user reloads, the chat service loads fine.
