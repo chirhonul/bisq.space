@@ -37,6 +37,16 @@ and set it up at a new domain, following [this guide](https://rocket.chat/docs/i
 - the service should be running and accessible via https now!
   - visit it and create the hubot account with credentials as in `docker-compose.yml` manually
 
+## hardware
+
+The service currently runs on a single dedicated server:
+
+- CPU: Intel® Celeron® Processor G3900T 2C/2T (2M Cache, 2.60 GHz)
+- RAM: 16GB DDR4 ECC
+- 1 HDD: 3.5" 1TB 6GB/S SATA3
+- 2 HDD: 3.5" 1TB 6GB/S SATA3
+- RAID Array: RAID 1 (Mirroring)
+
 ## maintenance
 
 - follow nginx logs with `sudo tail -f /var/log/nginx/*.log`
