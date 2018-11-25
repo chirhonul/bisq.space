@@ -1,0 +1,32 @@
+db:
+  image: mongo
+  volumes:
+    - ./data/runtime/db:/data/db
+    - ./data/dump:/dump
+  command: mongod --smallfiles
+
+rocketchat:
+  image: rocketchat/rocket.chat:latest
+  environment:
+    - MONGO_URL=mongodb://db:27017/rocketchat
+    - ROOT_URL=https://5787-13381.bacloud.info/
+    - Accounts_UseDNSDomainChecki=True
+  links:
+    - db:db
+  ports:
+    - 3000:3000
+
+hubot:
+  image: rocketchat/hubot-rocketchat:latest
+  environment:
+    - ROCKETCHAT_URL=185.25.48.173:3000
+    - ROCKETCHAT_ROOM=GENERAL
+    - ROCKETCHAT_USER=bisqbot
+    - ROCKETCHAT_PASSWORD=<PASSWORD GOES HERE>
+    - BOT_NAME=BisqHelper
+    - EXTERNAL_SCRIPTS=hubot-help,hubot-seen,hubot-links,hubot-greetings
+  links:
+    - rocketchat:rocketchat
+# this is used to expose the hubot port for notifications on the host on port 3001, e.g. for hubot-jenkins-notifier
+  ports:
+    - 3001:8080

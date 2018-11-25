@@ -1,0 +1,14 @@
+[Unit]
+Description=Hubot service for rocket.chat
+After=docker.service rocket-chat.service
+Requires=docker.service
+
+[Service]
+WorkingDirectory=/var/www/rocket.chat
+ExecStart=/usr/local/bin/docker-compose up hubot
+Restart=on-failure
+StartLimitBurst=3
+StartLimitInterval=60s
+
+[Install]
+WantedBy=multi-user.target
