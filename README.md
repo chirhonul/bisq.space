@@ -4,6 +4,18 @@ This repo holds tools and information about the bisq.space service.
 
 The `bisq.space` service runs a [rocket.chat](https://rocket.chat) instance.
 
+# features
+
+See [rocket.chat](https://rocket.chat) documentation for general info about the
+system.
+
+The bisq.space instance is also configured with the following features enabled:
+
+- 2fa support: using Google Authenticator or a similar app, a second factor can be required,
+  so that username + password + 2fa token is needed to sign in
+- end-to-end encryption enabled: users receive a code when first signing in, that along with username and password can be used
+  to create encrypted chats where even the server operator can't see the data: https://rocket.chat/docs/user-guides/end-to-end-encryption/
+
 # operational
 
 ## installation
