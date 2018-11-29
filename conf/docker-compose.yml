@@ -9,8 +9,8 @@ rocketchat:
   image: rocketchat/rocket.chat:latest
   environment:
     - MONGO_URL=mongodb://db:27017/rocketchat
-    - ROOT_URL=https://5787-13381.bacloud.info/
-    - Accounts_UseDNSDomainChecki=True
+    - ROOT_URL=https://bisq.space/
+    - Accounts_UseDNSDomainCheck=True
   links:
     - db:db
   ports:
