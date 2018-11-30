@@ -13,8 +13,12 @@ set -euo pipefail
   exit 1
 }
 
-echo "Creating backup at $(date -I).."
 cd /var/www/
 mkdir -p rocket.chat
+[[ -e /var/backups/rocket.chat/rocket.chat.backup-$(date -I).tar.gz ]] && {
+	echo "Backup already exists for today."
+	exit 0
+}
+echo "Creating backup.."
 tar czfv rocket.chat.backup-$(date -I).tar.gz rocket.chat/
 mv rocket.chat.backup-$(date -I).tar.gz /var/backups/rocket.chat/
