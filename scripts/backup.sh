@@ -13,7 +13,9 @@ cd conf
 echo "Copying remote configs locally.."
 scp s3:/var/www/rocket.chat/docker-compose.yml .
 scp s3:/etc/iptables.conf .
+scp s3:/etc/hosts .
 scp s3:/etc/nginx/sites-available/default nginx-sites-default
+scp s3:/etc/nginx/nginx.conf .
 scp s3:/lib/systemd/system/docker.service .
 scp s3:/lib/systemd/system/rocket-db.service .
 scp s3:/lib/systemd/system/rocket-chat.service .
