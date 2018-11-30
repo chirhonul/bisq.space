@@ -114,3 +114,16 @@ We want to have metrics and timeseries on:
 
 When registering as a new user, there's a "loading" screen after sign-up that takes
 a very long time or never completes. When the user reloads, the chat service loads fine.
+
+### connect.session() warning on startup
+
+When starting `rocket-chat.service`, a message is logged:
+
+```
+Warning: connect.session() MemoryStore is not
+designed for a production environment, as it will leak
+memory, and will not scale past a single process.
+```
+
+This seems to be https://github.com/RocketChat/Rocket.Chat/issues/10714, but it's
+unclear how to configure the service to avoid this.
