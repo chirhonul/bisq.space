@@ -16,6 +16,12 @@ The bisq.space instance is also configured with the following features enabled:
 - end-to-end encryption enabled: users receive a code when first signing in, that along with username and password can be used
   to create encrypted chats where even the server operator can't see the data: https://rocket.chat/docs/user-guides/end-to-end-encryption/
 
+## hubot
+
+todo: look into https://github.com/RocketChat/hubot-rocketchat
+https://github.com/hubot-scripts
+https://github.com/RocketChat/hubot-rocketchat#creating-a-user-on-the-server
+
 # operational
 
 ## installation
@@ -109,6 +115,12 @@ We want to have metrics and timeseries on:
 - (maybe) number of users, channels, messages
 
 ## known issues
+
+### emails are not sent
+
+The rocket.chat support for integrating with SMTP email servers could be set up,
+if we either host our own SMTP service, or find a third party service which allows
+our project.
 
 ### registration is slow
 
